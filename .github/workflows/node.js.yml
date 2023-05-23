@@ -1,27 +1,24 @@
-name: Cypress Example CI
-
+name: Cypress tests
 on:
+  # executa esse workflow sempre que subir uma alteracao para a branch main
   push:
-    branches:
-      - main
-  pull_request:
     branches: [ main ]
 
 jobs:
   build:
-
+    # maquina onde o workflow será executado
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [16.x]
-        # Veja a programação de lançamento do Node.js compatível em https://nodejs.org/en/about/releases/
+        # vai executar 2x o mesmo workflow (paralelo) para cada node-version        
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm run test
+    - run: npm test
