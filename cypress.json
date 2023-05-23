@@ -2,13 +2,13 @@
     "nodeVersion": "system",
     "env": {
       "db": {
-        "user": "usuario",
-        "password": "password",
+        "user": "SPREAD",
+        "password": "SPREAD_1896",
 
-        "connectString": "dataBase"
+        "connectString": "(description=(address_list=(address=(protocol=tcp)(host=brux0040) (port=1521)))(connect_data= (sid=T12MOB11)))"
 
       }
     }
   }
 
- // dataBase pegar no arquivo tns
+ 
