@@ -1,0 +1,14 @@
+{   
+    "nodeVersion": "system",
+    "env": {
+      "db": {
+        "user": "usuario",
+        "password": "password",
+
+        "connectString": "dataBase"
+
+      }
+    }
+  }
+
+ // dataBase pegar no arquivo tns
