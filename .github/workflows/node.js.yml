@@ -27,5 +27,4 @@ jobs:
     - run: npm install
     - run: npm config set user 0
     - run: npm config set unsafe-perm true
-    - run: npx cypress open
     - run: npx cypress run
