@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy.run": "cypress run",
+    "cy.open": "cypress open"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^8.4.1",
+    "cypress": "^9.7.0",
+    "cypress-multi-reporters": "^1.5.0",
     "fs": "0.0.1-security",
+    "mochawesome": "^7.0.1",
     "oracledb": "^5.1.0"
   }
 }

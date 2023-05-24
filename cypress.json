@@ -1,5 +1,5 @@
 {   
-    "nodeVersion": "system",
+  
     "env": {
       "db": {
         "user": "SPREAD",

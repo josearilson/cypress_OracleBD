@@ -1,24 +1,37 @@
-name: Cypress tests
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Executar testes Cypress
+
 on:
-  # executa esse workflow sempre que subir uma alteracao para a branch main
+# executa esse workflow sempre que subir uma alteracao para a brancj main
   push:
-    branches: [ main ]
-
+    branches: [ "main" ]
+ 
 jobs:
-  build:
-    # maquina onde o workflow será executado
-    runs-on: ubuntu-latest
-
+  build-and-test:
+    name: build-and-test-${{matrix.os}}
+# maquina onde sera executado o workflow
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        # vai executar 2x o mesmo workflow (paralelo) para cada node-version        
+        os: [windows-latest]
+     # vai executar 3x o mesmo workflow ( paralelo ) para cada node-version
         node-version: [12.x]
-
+        
     steps:
+    #faz o checkout do projeto
     - uses: actions/checkout@v2
+    
+     #faz o checkout da versao do node no projeto
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/checkout@v2
       with:
-        node-version: ${{ matrix.node-version }}
+         node-version: ${{ matrix.node-version }}
+         cache: 'npm'
+        
+        #execuçoes a serem realizadas.
     - run: npm install
-    - run: npm test
+    - run: npm install cypress@9.7.0 --save-dev
+    - run: npm run test
+    

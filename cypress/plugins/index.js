@@ -9,7 +9,8 @@ const oracledb = require("oracledb");
 //https://www.oracle.com/br/database/technologies/instant-client/winx64-64-downloads.html
 
 //Apos baixar o arquivo, devera inserir o caminho onde o salvou
- oracledb.initOracleClient({ libDir: "/Users/jose.ramalho/instantclient_21_10" }); 
+//oracledb.initOracleClient({ libDir: "/Users/jose.ramalho/instantclient_21_10" }); 
+oracledb.initOracleClient({ libDir: "../../instantclient_21_10" }); 
 
 
 const LogaNoBanco = async(query, dbconfig) => {
