@@ -1,6 +1,7 @@
 const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
+  "nodeVersion": "system",
   "env": {
     "db": {
       "user": "SPREAD",
