@@ -4,9 +4,9 @@ module.exports = defineConfig({
   "nodeVersion": "system",
   "env": {
     "db": {
-      "user": "SPREAD",
-      "password": "SPREAD_1896",
-      "connectString": "(description=(address_list=(address=(protocol=tcp)(host=brux0040) (port=1521)))(connect_data= (sid=T12MOB11)))"
+      "user": "xxxxxxxxx",
+      "password": "xxxxxxxxxxxxxxxxxxxx",
+      "connectString": "(description=(address_list=(address=(protocol=tcp)(host=xxxxx) (port=xxxxxxx)))(connect_data= (sid=xxxxxxx)))"
     }
   },
   e2e: {
